@@ -1,2 +1,2 @@
 # campaign-management
-An app to manage your campaigns
+An app to manage your campaigns.
