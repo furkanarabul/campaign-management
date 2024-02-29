@@ -1,0 +1,45 @@
+.filter-area {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin-bottom: 1.5rem;
+  max-width: 80%;
+}
+.filter-group {
+  margin-left: 0.5rem;
+}
+@media screen and (max-width: 768px) {
+  .filter-area {
+    display: flex;
+    flex-direction: column;
+    align-items: normal;
+  }
+  input,
+  select,
+  .react-datepicker-wrapper {
+    width: 100%;
+  }
+  input,
+  select {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .filter-area {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .filter-area {
+    padding: 20px;
+    font-size: 16px;
+  }
+}
+.filter-btn {
+  margin-left: 1rem;
+  margin-top: 0 !important;
+}

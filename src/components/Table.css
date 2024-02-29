@@ -1,0 +1,91 @@
+.table-wrapper {
+  width: 100%;
+}
+.table {
+  display: block;
+  overflow: hidden;
+  table-layout: auto;
+  border-collapse: collapse;
+  border-radius: 10px;
+  white-space: nowrap;
+  width: 100em;
+  max-width: 80%;
+  margin: auto;
+  overflow-x: auto;
+}
+
+.table thead {
+  background-color: #ccc;
+  color: #222;
+}
+.table tbody {
+  border: 1px solid rgb(211, 211, 211);
+}
+
+.table th,
+.table td {
+  padding: 0.8rem;
+}
+
+.table td {
+  border-top: 0.5px solid #ddd;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.table tbody tr:hover {
+  background-color: #eee;
+}
+
+.label {
+  border-radius: 3px;
+  padding: 0.3rem;
+  color: white;
+  text-decoration: none !important;
+}
+.label-abtest {
+  background-color: #db7e2d;
+}
+.label-mwtest {
+  background-color: rgb(24, 91, 168);
+}
+.label-standard {
+  background-color: #777;
+}
+.label-active {
+  background-color: green;
+}
+.label-deleted {
+  background-color: rgb(213, 32, 32);
+}
+.campaign-deleted {
+  text-decoration: line-through;
+}
+.actions {
+  display: flex;
+  justify-content: space-around;
+}
+.expand {
+  width: 100%;
+}
+.actions svg {
+  cursor: pointer;
+}
+.delete-btn {
+  color: rgb(213, 32, 32);
+}
+.reactivate-btn {
+  color: rgb(13, 116, 42);
+}
+.sort-icon {
+  margin-left: 5px;
+}
+.no-campaign {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 1.25rem;
+  color: #777;
+}
