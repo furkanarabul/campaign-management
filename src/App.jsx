@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Table from "./components/Table";
-import FilterArea from "./components/FilterArea";
 import Modal from "./components/Modal";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -21,38 +20,6 @@ function App() {
   useEffect(() => {
     localStorage.setItem("campaigns", JSON.stringify(campaigns));
   }, [campaigns]);
-
-  // Filter state and handler functions
-  const [nameFilter, setNameFilter] = useState("");
-  const [typeFilter, setTypeFilter] = useState("");
-  const [startDateFilter, setStartDateFilter] = useState("");
-  const [endDateFilter, setEndDateFilter] = useState("");
-  const [statusFilter, setStatusFilter] = useState("");
-
-  const handleClearFilters = () => {
-    setNameFilter("");
-    setTypeFilter("");
-    setStartDateFilter("");
-    setEndDateFilter("");
-    setStatusFilter("");
-  };
-
-  const filteredCampaigns = campaigns.filter((campaign) => {
-    return (
-      campaign.name.toLowerCase().includes(nameFilter.toLowerCase()) &&
-      campaign.type.toLowerCase().includes(typeFilter.toLowerCase()) &&
-      campaign.startTime.includes(startDateFilter) &&
-      campaign.endTime.includes(endDateFilter) &&
-      campaign.status.toLowerCase().includes(statusFilter.toLowerCase())
-    );
-  });
-
-  const handleStartDateFilterChange = (date) => {
-    setStartDateFilter(date ? date.toISOString() : "");
-  };
-  const handleEndDateFilterChange = (date) => {
-    setEndDateFilter(date ? date.toISOString() : "");
-  };
 
   // Sort state and handler functions
 
@@ -180,21 +147,8 @@ function App() {
 
   return (
     <div className="App">
-      <FilterArea
-        nameFilter={nameFilter}
-        typeFilter={typeFilter}
-        startDateFilter={startDateFilter}
-        endDateFilter={endDateFilter}
-        statusFilter={statusFilter}
-        onNameFilterChange={(e) => setNameFilter(e.target.value)}
-        onTypeFilterChange={(e) => setTypeFilter(e.target.value)}
-        onStartDateFilterChange={handleStartDateFilterChange}
-        onEndDateFilterChange={handleEndDateFilterChange}
-        onStatusFilterChange={(e) => setStatusFilter(e.target.value)}
-        onClearFilters={handleClearFilters}
-      />
       <Table
-        campaigns={filteredCampaigns}
+        campaigns={campaigns}
         editCampaign={handleEditCampaign}
         deleteCampaign={handleDeleteCampaign}
         toggleSortOrder={toggleSortOrder}
